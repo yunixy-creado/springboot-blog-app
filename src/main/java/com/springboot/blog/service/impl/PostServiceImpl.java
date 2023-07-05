@@ -66,6 +66,8 @@ public class PostServiceImpl implements PostService {
     @Override
     public PostDto getPostById(Long id) {
         Post post = postRepository.findById(id).orElseThrow(() -> new ResourceNotException("Post", "id", id));
+        // This line is used to fetch the comments.
+        //    return  mapToDTO(post);post.getComments().size();
         return  mapToDTO(post);
     }
 
