@@ -3,7 +3,7 @@ package com.springboot.blog.entity;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.stereotype.Service;
+//import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -38,4 +38,7 @@ public class Post {
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private Set<Comment> comments = new HashSet<>();
+//  @OneToMany(mappedBy = "post" , cascade = CascadeType.ALL, orphanRemoval = true)
+//  @JsonManagedReference
+//  private List<Comment> commentSet = new ArrayList<>();
 }
