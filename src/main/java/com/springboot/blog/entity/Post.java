@@ -1,5 +1,6 @@
 package com.springboot.blog.entity;
 
+//import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
@@ -10,7 +11,7 @@ import java.util.Set;
 
 @Getter
 @Setter
-@Data
+//@Data
 @AllArgsConstructor
 @NoArgsConstructor
 
@@ -36,7 +37,7 @@ public class Post {
     private String content;
 
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonManagedReference
+    //@JsonManagedReference
     private Set<Comment> comments = new HashSet<>();
 //  @OneToMany(mappedBy = "post" , cascade = CascadeType.ALL, orphanRemoval = true)
 //  @JsonManagedReference
