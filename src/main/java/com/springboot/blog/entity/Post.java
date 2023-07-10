@@ -9,6 +9,9 @@ import lombok.*;
 import java.util.HashSet;
 import java.util.Set;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 @Setter
 //@Data
@@ -39,7 +42,4 @@ public class Post {
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
     //@JsonManagedReference
     private Set<Comment> comments = new HashSet<>();
-//  @OneToMany(mappedBy = "post" , cascade = CascadeType.ALL, orphanRemoval = true)
-//  @JsonManagedReference
-//  private List<Comment> commentSet = new ArrayList<>();
 }
