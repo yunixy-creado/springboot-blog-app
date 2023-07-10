@@ -20,4 +20,5 @@ public class BlogAPIException extends RuntimeException{
      public HttpStatus getStatus() {
          return  status;
      }
+
 }
