@@ -11,7 +11,7 @@ import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
-import com.springboot.blog.exception.ResourceNotException;
+import com.springboot.blog.exception.ResourceNotFoundException;
 import org.springframework.data.domain.PageRequest;
 
 
@@ -65,7 +65,7 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public PostDto getPostById(Long id) {
-        Post post = postRepository.findById(id).orElseThrow(() -> new ResourceNotException("Post", "id", id));
+        Post post = postRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Post", "id", id));
         // This line is used to fetch the comments.
         //    return  mapToDTO(post);post.getComments().size();
         return  mapToDTO(post);
@@ -74,7 +74,7 @@ public class PostServiceImpl implements PostService {
     @Override
     public PostDto updatePost(PostDto postDto, long id) {
      //get post by id from the database
-        Post post = postRepository.findById(id).orElseThrow(() -> new ResourceNotException("Post", "id", id));
+        Post post = postRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Post", "id", id));
 
         post.setTitle(postDto.getTitle());
         post.setDescription(postDto.getDescription());
@@ -87,7 +87,7 @@ public class PostServiceImpl implements PostService {
     @Override
     public void deletePostById(long id) {
         //get post by id from the database
-        Post post = postRepository.findById(id).orElseThrow(() -> new ResourceNotException("Post", "id", id));
+        Post post = postRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Post", "id", id));
         postRepository.delete(post);
     }
 
