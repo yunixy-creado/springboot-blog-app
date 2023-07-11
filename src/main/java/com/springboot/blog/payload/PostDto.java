@@ -4,12 +4,16 @@ import com.springboot.blog.entity.Comment;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-
+import lombok.Singular;
 import java.util.Set;
-
+import javax.validation.constraints.NotEmpty;
 @Data
 public class PostDto {
     private long id;
+
+    //title should not be null or empty
+    //title should have at least 2 characters
+
     private String title;
     private String description;
     private String content;
