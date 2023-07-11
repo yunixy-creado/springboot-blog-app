@@ -1,13 +1,16 @@
 package com.springboot.blog.payload;
 
-import com.springboot.blog.entity.Comment;
+//import com.spring boot.blog.entity.Comment;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.Singular;
+//import lombok.Getter;
+//import lombok.Setter;
+//import lombok.Singular;
 import java.util.Set;
-import javax.validation.constraints.NotEmpty;
+
 @Data
+@NotEmpty
+
 public class PostDto {
     private long id;
 
