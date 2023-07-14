@@ -21,7 +21,7 @@ public class Comment {
     private String email;
     private String body;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "post_id", nullable = false)
     //@JsonBackReference
     private Post post;
